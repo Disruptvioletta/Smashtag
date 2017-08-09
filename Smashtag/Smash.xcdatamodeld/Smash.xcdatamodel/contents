@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TweetsEntity" representedClassName=".TweetsEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="personWhoHadTweeted" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TwitterUsersEntity" inverseName="quantityOfTweets" inverseEntity="TwitterUsersEntity" syncable="YES"/>
+    </entity>
+    <entity name="TwitterUsersEntity" representedClassName=".TwitterUsersEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="handle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="quantityOfTweets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TweetsEntity" inverseName="personWhoHadTweeted" inverseEntity="TweetsEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TweetsEntity" positionX="-144" positionY="-36" width="128" height="103"/>
+        <element name="TwitterUsersEntity" positionX="-441" positionY="-36" width="128" height="88"/>
+    </elements>
+</model>
